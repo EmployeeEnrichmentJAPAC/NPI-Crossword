@@ -27,7 +27,7 @@
         }
 
         .crossword-clues {
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(0, 0, 0, 1.0);
         }
 
@@ -45,7 +45,7 @@
         table.crossword-grid {
             width: 100%;
             max-width: 100%;
-            border-spacing: 50;
+            border-spacing: 0;
             border-collapse: collapse;
         }
 
@@ -171,30 +171,41 @@
 
 <body>
     <div class="container">
-        <h1 class="page-header"><span style="color: rgb(0, 0, 0);">Launch Crossword</span></h1>
-        <p class="h4"><span style="color: rgb(0, 0, 0);">Are you ready to play?</span></p>
-        <p class="h5"><span style="color: rgb(0, 0, 0);">The words will turn green if your entry is correct!</span></p>
+        <h1 class="page-header"><span style="color: rgb(255, 255, 255);">Launch Crossword</span></h1>
+        <p class="h4"><span style="color: rgb(255, 255, 255);">Are you ready to play?</span></p>
+        <p class="h5"><span style="color: rgb(255, 255, 255);">The words will turn green if your entry is correct!</span></p>
         <div class="crossword"><br></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         var words = [
-             {number:1,direction:'down',row:1,column:7,clue:'Translate the word stickers into German.',answer:'aufkleber',hint:''},
-             {number:2,direction:'across',row:3,column:7,clue:'Translate the word picture into Italian.',answer:'foto',hint:''},
-             {number:3,direction:'down',row:4,column:5,clue:'Translate the word translate into Italian.',answer:'tradurre',hint:''},    
-             {number:4,direction:'down',row:4,column:12,clue:'Translate the word launch into Spanish.',answer:'iniciar',hint:''},
-             {number:5,direction:'across',row:6,column:1,clue:'Translate the word messages into Portuguese.',answer:'mensagens',hint:''},
-             {number:6,direction:'down',row:8,column:3,clue:'Translate the word widget into French.',answer:'widget',hint:''},
-             {number:7,direction:'down',row:8,column:9,clue:'Translate the word Apple into Spanish.',answer:'manzana',hint:''},
-             {number:7,direction:'across',row:8,column:9,clue:'Translate the word music into German.',answer:'musik',hint:''},
-             {number:8,direction:'across',row:9,column:2,clue:'Translate the word library into Italian',answer:'libreria',hint:''},
-             {number:9,direction:'across',row:13,column:7,clue:'Translate the word pin into Portuguese.',answer:'pino',hint:''},
-                                
+            {number:1,direction:'down',row:1,column:9,clue:'Where in settings is VoiceOver located. ',answer:'accessibility',hint:''},
+            {number:2,direction:'down',row:1,column:12,clue:'Always there to help with one simple command',answer:'siri',hint:''},
+            {number:3,direction:'down',row:2,column:6,clue:'Recommended before updating and getting a service.',answer:'backup',hint:''},
+            {number:4,direction:'down',row:3,column:16,clue:'Used to pair accessories',answer:'bluetooth',hint:''},
+            {number:4,direction:'across',row:3,column:16,clue:'Apple partnered with which headphone company.',answer:'beats',hint:''},
+            {number:5,direction:'across',row:4,column:6,clue:'Apple Headquarters.',answer:'cupertino',hint:''},
+            {number:6,direction:'down',row:5,column:18,clue:'Apple music and iCloud storage are considered what. ',answer:'subscriptions',hint:''},
+            {number:7,direction:'across',row:6,column:4,clue:'Apple music player',answer:'iTunes',hint:''},
+            {number:8,direction:'across',row:6,column:12,clue:'60 million songs',answer:'applemusic',hint:''},
+            {number:8,direction:'down',row:6,column:12,clue:'The amount of time it takes to lock your phone',answer:'autolock',hint:''},
+            {number:9,direction:'down',row:6,column:14,clue:'Prevents easy access to your phone',answer:'passcode',hint:''},
+            {number:10,direction:'down',row:6,column:20,clue:'Which iPhone introduced FaceID',answer:'iPhoneX',hint:''}, 
+            {number:11,direction:'down',row:8,column:4,clue:'Cheese grater',answer:'MacPro',hint:''}, 
+            {number:12,direction:'across',row:9,column:1,clue:'The new addition to the app store',answer:'arcade',hint:''}, 
+            {number:13,direction:'across',row:9,column:8,clue:'A pro product',answer:'airpods',hint:''},     
+            {number:14,direction:'across',row:11,column:3,clue:'It once had a shuffle model',answer:'iPod',hint:''}, 
+            {number:15,direction:'down',row:12,column:2,clue:'Stores encrypted data',answer:'Keychain',hint:''}, 
+            {number:16,direction:'across',row:13,column:1,clue:'Apple ID with security questions',answer:'Secondary',hint:''}, 
+            {number:17,direction:'across',row:15,column:1,clue:'Used to sync/backup data',answer:'iCloud',hint:''}, 
+            {number:18,direction:'across',row:17,column:11,clue:'The most commonly used app for texting',answer:'Messages',hint:''}, 
+            {number:19,direction:'across',row:18,column:1,clue:'CEO',answer:'TimCook',hint:''}, 
+            
         ];
         
         // Set global variables
-        var gridSize = [25,20];     // number of squares wide, number of squares tall
+        var gridSize = [25,25];     // number of squares wide, number of squares tall
         var direction = 'across';   // set initial direction to 'across'
         var markCorrect = true;     // indicates ability for answers to be marked correct. will be set to false if "show answers" is clicked
         var successShown = false;   // indicates whether the success modal has been shown
